@@ -1,24 +1,25 @@
-# Plantilla de Python (Python Boilerplate) 
+# Plantilla de Python (Python Boilerplate) ![status](https://github.com/pmareke/python-boilerplate/actions/workflows/app.yml/badge.svg)
+
+Este repositorio es una **plantilla base (boilerplate)** para proyectos de Python diseñada para proporcionar un punto de partida rápido con herramientas de desarrollo modernas preconfiguradas.
 
 ## ¿Qué es este proyecto?
 
-Este repositorio es una **plantilla base (boilerplate)** para proyectos de Python que te permite iniciar rápidamente el desarrollo de aplicaciones Python con las mejores prácticas ya configuradas.
+Esta plantilla te permite iniciar rápidamente el desarrollo de aplicaciones Python con las mejores prácticas ya configuradas, eliminando la necesidad de configurar desde cero todas las herramientas de desarrollo, testing y calidad de código.
 
-## Propósito y Características
-
-### 🎯 **Objetivo Principal**
-Proporcionar un punto de partida rápido y profesional para proyectos Python, eliminando la necesidad de configurar desde cero todas las herramientas de desarrollo, testing y calidad de código.
-
-### ✨ **Características Principales**
+## Características Principales
 
 - **Python 3.12**: Utiliza la versión más reciente de Python
-- **Gestión Moderna de Dependencias**: Usa `uv` como gestor de paquetes (más rápido que pip)
+- **Gestión Moderna de Paquetes**: Usa `uv` para gestión rápida de dependencias
 - **Testing Robusto**: Framework de pruebas completo con pytest
 - **Calidad de Código**: Herramientas automáticas de linting y formateo
 - **Verificación de Tipos**: Análisis estático con mypy
 - **CI/CD Automatizado**: GitHub Actions preconfigurado
 - **Git Hooks**: Validación automática antes de commits
 - **Estructura Organizada**: Separación clara entre código fuente, tests y scripts
+
+## Requisitos
+
+- Solo necesitas tener instalado [uv](https://docs.astral.sh/uv).
 
 ## Estructura del Proyecto
 
@@ -67,49 +68,43 @@ Python-boilerplate/
 - **Git Hooks**: Validación antes de commits
 - **pyproject.toml**: Configuración moderna de proyectos Python
 
-## Comandos Disponibles
+## Comandos del Proyecto
 
-El proyecto utiliza `make` para simplificar las tareas comunes:
+El proyecto utiliza [Makefiles](https://www.gnu.org/software/make/manual/html_node/Introduction.html) para ejecutar las tareas más comunes:
 
-### 🚀 **Comandos de Configuración**
-```bash
-make help          # Muestra todos los comandos disponibles
-make local-setup   # Configura el entorno local (instala git hooks)
-make install       # Instala las dependencias del proyecto
-make update        # Actualiza las dependencias
-```
+### 🚀 Comandos de Configuración
+- `help`: Muestra todos los comandos disponibles
+- `local-setup`: Configura el entorno local (instala git hooks)
+- `install`: Instala las dependencias del proyecto
+- `update`: Actualiza las dependencias
 
-### 🏃 **Comandos de Ejecución**
-```bash
-make run           # Ejecuta la aplicación principal
-make test          # Ejecuta todas las pruebas
-make watch         # Ejecuta las pruebas en modo observación (se re-ejecutan automáticamente)
-```
+### 🏃 Comandos de Ejecución
+- `run`: Ejecuta la aplicación
+- `test`: Ejecuta todas las pruebas
+- `watch`: Ejecuta las pruebas en modo observación (se re-ejecutan automáticamente)
 
-### 🔍 **Comandos de Calidad de Código**
-```bash
-make check-format  # Verifica el formato del código
-make format        # Formatea el código automáticamente
-make check-lint    # Verifica el estilo del código
-make lint          # Corrige automáticamente problemas de estilo
-make check-typing  # Verifica los tipos con mypy
-make checks        # Ejecuta todas las verificaciones
-```
+### 🔍 Comandos de Calidad de Código
+- `check-format`: Verifica el formato del código
+- `format`: Formatea el código automáticamente
+- `check-lint`: Verifica el estilo del código
+- `lint`: Corrige automáticamente problemas de estilo
+- `check-typing`: Verifica los tipos con mypy
+- `checks`: Ejecuta todas las verificaciones (formato, lint, tipado)
 
-### 📦 **Gestión de Paquetes**
-```bash
-make add-package package=nombre_paquete  # Instala un nuevo paquete
-```
+### 📦 Gestión de Paquetes
+- `add-package package=XXX`: Instala el paquete XXX, ej: `make add-package package=requests`
 
-### 🔄 **Comandos de Utilidad**
-```bash
-make rename-project name=nuevo-nombre    # Renombra el proyecto
-make pre-commit    # Ejecuta todas las verificaciones (usado por git hooks)
-```
+### 🔄 Comandos de Utilidad
+- `rename-project name=nuevo-nombre`: Renombra el proyecto
+- `pre-commit`: Ejecuta todas las verificaciones (usado por git hooks)
+
+**Importante: Ejecuta el comando `make local-setup` antes de empezar a programar.**
+
+_Para crear un commit debes pasar la fase de pre-commit que ejecuta los comandos de verificación y test._
 
 ## Flujo de Desarrollo
 
-### 1. **Configuración Inicial**
+### 1. Configuración Inicial
 ```bash
 # Clona el repositorio
 git clone <url-del-repositorio>
@@ -119,7 +114,7 @@ cd Python-boilerplate
 make local-setup
 ```
 
-### 2. **Desarrollo Diario**
+### 2. Desarrollo Diario
 ```bash
 # Ejecuta la aplicación
 make run
@@ -134,7 +129,7 @@ make checks
 make watch
 ```
 
-### 3. **Antes de Hacer Commit**
+### 3. Antes de Hacer Commit
 El proyecto tiene configurados git hooks que automáticamente:
 - Verifican el formato del código
 - Ejecutan el linter
@@ -199,40 +194,87 @@ result = dummy_class.add(1, 2)
 print(result)  # Imprime: 3
 ```
 
+## Herramientas y Tecnologías
+
+### 🔧 Herramientas de Desarrollo
+
+1. **[uv](https://docs.astral.sh/uv)**: Gestor de paquetes Python moderno y extremadamente rápido
+2. **[pytest](https://docs.pytest.org/)**: Framework de testing más popular de Python
+3. **[mypy](https://mypy.readthedocs.io/)**: Verificador de tipos estático
+4. **[ruff](https://github.com/astral-sh/ruff)**: Linter y formateador rápido escrito en Rust
+
+### 🧪 Herramientas de Testing
+
+- **[pytest](https://docs.pytest.org/en/7.1.x/contents.html)**: Ejecutor de pruebas
+- **[pytest-xdist](https://github.com/pytest-dev/pytest-xdist)**: Plugin de pytest para ejecutar pruebas en paralelo
+- **[doublex](https://github.com/davidvilla/python-doublex)**: Framework poderoso para test doubles en Python
+- **[expects](https://expects.readthedocs.io/en/stable/)**: Librería de aserciones expresiva y extensible para TDD/BDD
+- **[doublex-expects](https://github.com/jaimegildesagredo/doublex-expects)**: Librería de matchers para la librería de aserciones Expects
+
+### 🎨 Estilo de Código
+
+- **[mypy](https://mypy.readthedocs.io/en/stable/)**: Verificador de tipos estático
+- **[ruff](https://github.com/astral-sh/ruff)**: Linter de Python extremadamente rápido, escrito en Rust
+
+### ⚙️ Configuración y Automatización
+
+- **Makefile**: Comandos simplificados para tareas comunes
+- **GitHub Actions**: CI/CD automático
+- **Git Hooks**: Validación antes de commits
+- **pyproject.toml**: Configuración moderna de proyectos Python
+
+## Gestión de Paquetes
+
+Este proyecto utiliza [uv](https://docs.astral.sh/uv) como gestor de paquetes.
+
 ## Ventajas de Esta Plantilla
 
-### 🚀 **Productividad**
+### 🚀 Productividad
 - **Inicio rápido**: Todo configurado desde el primer momento
 - **Comandos simplificados**: Un solo comando para tareas complejas
 - **Automatización**: Git hooks y CI/CD preconfigurados
 
-### 🔒 **Calidad**
+### 🔒 Calidad
 - **Verificación automática**: Imposible hacer commit con código de mala calidad
 - **Testing robusto**: Framework completo para diferentes tipos de pruebas
 - **Tipado estático**: Detección temprana de errores
 
-### 🔧 **Mantenibilidad**
+### 🔧 Mantenibilidad
 - **Estructura clara**: Separación de responsabilidades
 - **Documentación**: Código autodocumentado y comentarios claros
 - **Estándares**: Sigue las mejores prácticas de Python
 
-### 🏢 **Profesional**
+### 🏢 Profesional
 - **CI/CD integrado**: Pipeline profesional desde el día uno
 - **Monitoreo**: Badge de estado en el README
 - **Escalabilidad**: Estructura que crece con el proyecto
 
-## Prerequisitos
+## Resumen Rápido
 
-**Único requisito**: Tener instalado [uv](https://docs.astral.sh/uv/getting-started/installation/)
+### ¿Qué es?
+**Una plantilla lista para usar** que incluye todas las herramientas modernas de desarrollo Python preconfiguradas.
 
-Todo lo demás se instala automáticamente.
+### ¿Para qué sirve?
+- ✅ **Iniciar proyectos Python rápidamente** sin configurar herramientas desde cero
+- ✅ **Garantizar calidad de código** con verificaciones automáticas
+- ✅ **Seguir mejores prácticas** de desarrollo Python moderno
+- ✅ **Tener CI/CD funcionando** desde el primer día
+
+### ¿Cómo empezar?
+
+1. **Prerequisito**: Instalar `uv`
+2. **Configurar proyecto**: `make local-setup && make install`
+3. **Probar que funciona**: `make run && make test && make checks`
+4. **Para nuevo proyecto**: Renombrar y reemplazar código de ejemplo
+
+### ¿Por qué usar esta plantilla?
+
+- **🚀 Velocidad**: 5 minutos para tener un proyecto completo funcionando
+- **🎯 Calidad Garantizada**: Imposible hacer commit con código malo
+- **🏢 Profesional**: CI/CD completo desde día 1
 
 ## Contribuciones y Agradecimientos
 
-Este proyecto fue creado como una plantilla de uso general. Agradecimientos especiales a:
+Agradecimientos especiales a:
 - [GoldraK](https://github.com/GoldraK)
 - [Alex Lopez](https://github.com/alexlopezc)
-
----
-
-**¡Importante!** Recuerda ejecutar `make local-setup` antes de empezar a desarrollar para configurar correctamente los git hooks.
