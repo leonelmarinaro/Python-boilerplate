@@ -1,4 +1,4 @@
-# Python Boilerplate ![status](https://github.com/pmareke/python-boilerplate/actions/workflows/app.yml/badge.svg)
+# Python Boilerplate ![status](https://github.com/leonelmarinaro/Python-boilerplate/actions/workflows/app.yml/badge.svg)
 
 This repository is a **Python boilerplate template** designed to provide a fast starting point for Python projects with modern development tools pre-configured.
 
