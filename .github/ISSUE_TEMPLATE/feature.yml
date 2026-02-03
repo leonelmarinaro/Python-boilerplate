@@ -1,0 +1,112 @@
+name: Feature Request
+description: Solicitar una nueva funcionalidad
+title: "[Feature]: "
+labels: ["type:feature", "status:spec-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Nueva Feature
+        Completa la informacion para solicitar una nueva funcionalidad.
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripcion
+      description: Describe la feature usando el formato "Como... quiero... para..."
+      placeholder: |
+        Como [rol],
+        quiero [accion],
+        para [beneficio].
+    validations:
+      required: true
+
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto
+      description: Por que es necesaria esta feature?
+      placeholder: Explica el problema o necesidad que resuelve
+    validations:
+      required: true
+
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de Aceptacion
+      description: Lista los criterios que deben cumplirse
+      placeholder: |
+        - [ ] Criterio 1
+        - [ ] Criterio 2
+        - [ ] Criterio 3
+    validations:
+      required: true
+
+  - type: dropdown
+    id: modulo
+    attributes:
+      label: Modulo
+      description: Que modulo afecta esta feature?
+      options:
+        - core
+        - billing
+        - logistics
+        - contract-config
+        - auth
+        - infra
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complejidad
+    attributes:
+      label: Complejidad Estimada
+      description: Estimacion de esfuerzo
+      options:
+        - S (pocas horas)
+        - M (1-2 dias)
+        - L (3-5 dias)
+        - XL (mas de una semana)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad
+      options:
+        - alta
+        - media
+        - baja
+    validations:
+      required: true
+
+  - type: textarea
+    id: spec-tecnica
+    attributes:
+      label: Especificacion Tecnica
+      description: Completar antes de desarrollo (endpoints, schemas, archivos)
+      placeholder: |
+        ### Endpoints Afectados
+        | Metodo | Ruta | Descripcion |
+        |--------|------|-------------|
+        | POST | /api/v1/... | ... |
+
+        ### Archivos a Modificar
+        - src/...
+
+        ### Migracion Requerida
+        Si / No
+    validations:
+      required: false
+
+  - type: textarea
+    id: referencias
+    attributes:
+      label: Referencias
+      description: Links a ADRs, Figma, documentacion, etc.
+      placeholder: |
+        - ADR: ...
+        - Figma: ...
+    validations:
+      required: false
